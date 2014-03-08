@@ -1231,15 +1231,15 @@ jsPlayer.constructors = {
     document.getElementById(rootElementId).appendChild(startStopElement);
     engine.bind('loadeddata', function () {
       jsPlayer.domExt.removeClass(startStopElement, "startStopLoading");
-      jsPlayer.domExt.addClass(startStopElement, "playerStopped");
+      jsPlayer.domExt.addClass(startStopElement, "glyphicon-play");
     });
     engine.bind('play', function () {
-      jsPlayer.domExt.removeClass(startStopElement, "playerStopped");
-      jsPlayer.domExt.addClass(startStopElement, "playerStarted");
+      jsPlayer.domExt.removeClass(startStopElement, "glyphicon-play");
+      jsPlayer.domExt.addClass(startStopElement, "glyphicon-pause");
     });
     engine.bind('pause', function () {
-      jsPlayer.domExt.removeClass(startStopElement, "playerStarted");
-      jsPlayer.domExt.addClass(startStopElement, "playerStopped");
+      jsPlayer.domExt.removeClass(startStopElement, "glyphicon-pause");
+      jsPlayer.domExt.addClass(startStopElement, "glyphicon-play");
     });
     jsPlayer.domExt.bindEvent(startStopElement, 'click', function () {
       if (engine.isPlaying()) {
